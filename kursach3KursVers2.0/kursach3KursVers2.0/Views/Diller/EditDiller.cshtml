@@ -1,0 +1,59 @@
+﻿@model kursach3KursVers2._0.ViewModels.DillerListViewModel
+@{
+    ViewData["Title"] = "Редактирование дилера";
+}
+<form class="needs-validation " asp-controller="Diller" asp-action="EditDiller" method="post">
+    <div class="container bg-info px-4 py-5 mb-5" id="icon-grid">
+        <h2 class="pb-2 border-bottom link-light">Редактировать дилера</h2>
+        <div class="">
+            <div class="bg-primary py-2 mb-4">
+                <h4 class="mb-3 text-light px-5">Данные дилера</h4>
+                <div class="row g-3 px-5">
+                    <div class="form-floating col-md-2">
+                        <input asp-for="CompanyName" type="text" class="form-control bg-primary text-light" id="floatingInput" placeholder="">
+                        <label class="text-light" for="floatingInput">Название компании</label>
+                        <span asp-validation-for="CompanyName" class="text-danger"></span>
+                    </div>
+                    <div class="form-floating col-md-2">
+                        <input asp-for="CompanyINN" type="text" class="form-control bg-primary text-light" id="floatingInput" placeholder="">
+                        <label class="text-light" for="floatingInput">ИНН</label>
+                        <span asp-validation-for="CompanyINN" class="text-danger"></span>
+                    </div>
+                    <div class="form-floating col-md-2">
+                        <input asp-for="CompanyKPP" type="text" class="form-control bg-primary text-light" id="floatingInput" placeholder="">
+                        <label class="text-light" for="floatingInput">КПП</label>
+                        <span asp-validation-for="CompanyKPP" class="text-danger"></span>
+                    </div>
+                    <div class="form-floating col-md-2">
+                        <input asp-for="CompanyEmail" type="text" class="form-control bg-primary text-light" id="floatingInput" placeholder="">
+                        <label class="text-light" for="floatingInput">Email</label>
+                        <span asp-validation-for="CompanyEmail" class="text-danger"></span>
+
+                    </div>
+                    <div class="form-floating col-md-2">
+                        <input asp-for="CompanyPhone" type="text" class="form-control bg-primary text-light" id="floatingInput" placeholder="">
+                        <label class="text-light" for="floatingInput">Телефон для справки</label>
+                        <span asp-validation-for="CompanyPhone" class="text-danger"></span>
+
+                    </div>
+                    <div class="form-floating col-md-2">
+                        <input asp-for="CompanyManagerPhone" type="text" class="form-control bg-primary text-light" id="floatingInput" placeholder="">
+                        <label class="text-light" for="floatingInput">Телефон менеджера</label>
+                        <span asp-validation-for="CompanyManagerPhone" class="text-danger"></span>
+
+                    </div>
+                    <div class="form-floating col-md-3">
+                        <label for="formFileSm" class="form-label text-light py-0 small">Логотип компании</label>
+                        <input asp-for="CompanyLogo" class="form-control form-control-sm bg-primary text-light" id="formFileSm" type="file">
+                        <span asp-validation-for="CompanyLogo" class="text-danger"></span>
+                        <input asp-for="DillerId" class="form-control form-control-sm bg-primary text-light" id="formFileSm" type="hidden">
+                    </div>
+                    <hr class="my-4">
+                    <div class="px-5">
+                        <button class="w-25 btn btn-primary btn-lg" type="submit">Сохранить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

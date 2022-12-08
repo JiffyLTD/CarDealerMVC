@@ -1,0 +1,97 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = kursach3KursVers2._0
+build_property.RootNamespace = kursach3KursVers2._0
+build_property.ProjectDir = D:\УЧЕБА\3КУРС\СУБД\kursach3KursVers2.0\kursach3KursVers2.0\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\УЧЕБА\3КУРС\СУБД\kursach3KursVers2.0\kursach3KursVers2.0
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/УЧЕБА/3КУРС/СУБД/kursach3KursVers2.0/kursach3KursVers2.0/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/УЧЕБА/3КУРС/СУБД/kursach3KursVers2.0/kursach3KursVers2.0/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/УЧЕБА/3КУРС/СУБД/kursach3KursVers2.0/kursach3KursVers2.0/Views/Car/AddCar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyXEFkZENhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/УЧЕБА/3КУРС/СУБД/kursach3KursVers2.0/kursach3KursVers2.0/Views/Car/AllCars.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyXEFsbENhcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/УЧЕБА/3КУРС/СУБД/kursach3KursVers2.0/kursach3KursVers2.0/Views/Car/EditCar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyXEVkaXRDYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/УЧЕБА/3КУРС/СУБД/kursach3KursVers2.0/kursach3KursVers2.0/Views/Car/ThisCar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyXFRoaXNDYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/УЧЕБА/3КУРС/СУБД/kursach3KursVers2.0/kursach3KursVers2.0/Views/Contract/NewContract.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udHJhY3RcTmV3Q29udHJhY3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/УЧЕБА/3КУРС/СУБД/kursach3KursVers2.0/kursach3KursVers2.0/Views/Diller/AddDiller.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlsbGVyXEFkZERpbGxlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/УЧЕБА/3КУРС/СУБД/kursach3KursVers2.0/kursach3KursVers2.0/Views/Diller/AllDillers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlsbGVyXEFsbERpbGxlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/УЧЕБА/3КУРС/СУБД/kursach3KursVers2.0/kursach3KursVers2.0/Views/Diller/EditDiller.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlsbGVyXEVkaXREaWxsZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/УЧЕБА/3КУРС/СУБД/kursach3KursVers2.0/kursach3KursVers2.0/Views/Home/About.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/УЧЕБА/3КУРС/СУБД/kursach3KursVers2.0/kursach3KursVers2.0/Views/Home/Main.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNYWluLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/УЧЕБА/3КУРС/СУБД/kursach3KursVers2.0/kursach3KursVers2.0/Views/Profile/UserEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVxVc2VyRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/УЧЕБА/3КУРС/СУБД/kursach3KursVers2.0/kursach3KursVers2.0/Views/Profile/UserProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVxVc2VyUHJvZmlsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/УЧЕБА/3КУРС/СУБД/kursach3KursVers2.0/kursach3KursVers2.0/Views/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/УЧЕБА/3КУРС/СУБД/kursach3KursVers2.0/kursach3KursVers2.0/Views/UsersList/EditUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNMaXN0XEVkaXRVc2VyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/УЧЕБА/3КУРС/СУБД/kursach3KursVers2.0/kursach3KursVers2.0/Views/UsersList/UsersList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNMaXN0XFVzZXJzTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/УЧЕБА/3КУРС/СУБД/kursach3KursVers2.0/kursach3KursVers2.0/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/УЧЕБА/3КУРС/СУБД/kursach3KursVers2.0/kursach3KursVers2.0/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/УЧЕБА/3КУРС/СУБД/kursach3KursVers2.0/kursach3KursVers2.0/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-equgaib2x4

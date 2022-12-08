@@ -1,0 +1,35 @@
+﻿@model kursach3KursVers2._0.ViewModels.LoginViewModel
+@{
+    ViewData["Title"] = "Вход";
+}
+<div class="container bg-info px-4 py-5" id="icon-grid">
+    <div class="row align-items-center">
+        <div class="col-lg-7 text-center text-lg-start">
+            <h1 class="display-4 fw-bold lh-1 mb-3 link-light">Вход в личный кабинет</h1>
+            <p class="col-lg-10 fs-4 link-light">В личном кабинете хранится вся ваша информация, не забывайте ее обновлять. Для улучшения защиты персональных данных меняйте пароль раз в месяц.</p>
+        </div>
+        <div class="col-md-10 mx-auto col-lg-5">
+            <form class="p-4 p-md-5  rounded-3 bg-primary" method="post" asp-controller="Account" asp-action="Login" asp-route-returnUrl="@Model.ReturnUrl">
+                <div class="form-floating mb-3">
+                    <input asp-for="UserName"  class="form-control bg-primary text-light" id="floatingInput" placeholder="Admin">
+                    <label class="text-light" for="floatingInput">Логин</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input asp-for="Password" type="password" class="form-control bg-primary text-light" id="floatingPassword" placeholder="Password">
+                    <label class="text-light" for="floatingPassword">Пароль</label>
+                </div>
+                <div class="checkbox mb-3">
+                    <label class="text-light">
+                        <input asp-for="RememberMe" type="checkbox"> Запомнить меня
+                    </label>
+                </div>
+                <span class="text-danger">@Html.ValidationMessage("LoginError")</span>
+                <span asp-validation-for="UserName" class="text-danger"></span>
+                <span asp-validation-for="Password" class="text-danger"></span>
+                <button class="w-100 btn btn-lg btn-primary" type="submit">Вход</button>
+
+                <small class="text-muted">Нажимая Вход, вы соглашаетесь с условиями использования.</small>
+            </form>
+        </div>
+    </div>
+</div>

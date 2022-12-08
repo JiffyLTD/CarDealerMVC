@@ -1,0 +1,26 @@
+﻿@model kursach3KursVers2._0.ViewModels.UserEditListView
+@{
+    ViewData["Title"] = "Редактирование пользователя";
+}
+<form class="needs-validation " asp-controller="UsersList" asp-action="EditUser" method="post">
+    <div class="container bg-info px-4 py-5 mb-5" id="icon-grid">
+        <h2 class="pb-2 border-bottom link-light">Редактировать пользователя</h2>
+        <div class="">
+            <div class="bg-primary py-2 mb-4">
+                <h4 class="mb-3 text-light px-5">Данные пользователя</h4>
+                <div class="row g-3 px-5">
+                    <div class="form-floating col-md-2">
+                        <input asp-for="UserRole" type="text" class="form-control bg-primary text-light" id="floatingInput" placeholder="">
+                        <label class="text-light" for="floatingInput">Роль пользователя</label>
+                        <span asp-validation-for="UserRole" class="text-danger"></span>
+                    </div>
+                    <input asp-for="UserId" type="hidden">
+                    <hr class="my-4">
+                    <div class="px-5">
+                        <button class="w-25 btn btn-primary btn-lg" type="submit">Сохранить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

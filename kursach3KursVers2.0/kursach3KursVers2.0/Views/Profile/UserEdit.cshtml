@@ -1,0 +1,91 @@
+﻿@model kursach3KursVers2._0.ViewModels.ProfileViewModel
+@{
+    ViewData["Title"] = "Редактирование профиля";
+}
+<form class="needs-validation " asp-controller="Profile" asp-action="UserEdit" method="post">
+<div class="container bg-info px-4 py-5 mb-5" id="icon-grid">
+    <h2 class="pb-2 border-bottom link-light">Изменить данные профиля</h2>
+    <div class="">
+        <div class="bg-primary py-2 mb-4">
+            <h4 class="mb-3 text-light px-5">Личные данные</h4>
+                <div class="row g-3 px-5">
+                    <div class="form-floating col-md-2">
+                        <input asp-for="LastName" type="text" class="form-control bg-primary text-light" id="floatingInput" placeholder="Иванов" autocomplete="off" >
+                        <label class="text-light" for="floatingInput">Фамилия</label>
+                    </div>
+                    <div class="form-floating col-md-2">
+                        <input asp-for="FirstName" type="text" class="form-control bg-primary text-light" id="floatingInput" placeholder="Иван" autocomplete="off">
+                        <label class="text-light" for="floatingInput">Имя</label>
+                    </div>
+                    <div class="form-floating col-md-2">
+                        <input asp-for="Patronymic" type="text" class="form-control bg-primary text-light" id="floatingInput" placeholder="Иванович" autocomplete="off">
+                        <label class="text-light" for="floatingInput">Отчество</label>
+                    </div>
+                    <div class="form-floating col-md-2">
+                        <input asp-for="PhoneNumber" type="text" class="form-control bg-primary text-light" id="floatingInput" placeholder="89998887766" autocomplete="off">
+                        <label class="text-light" for="floatingInput">Телефон</label>
+                        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                    </div>
+                    <div class="form-floating col-md-3">
+                        <label for="formFileSm" class="form-label text-light py-0 small">Фото профиля</label>
+                        <input asp-for="ProfilePhotoPath" class="form-control form-control-sm bg-primary text-light" id="formFileSm" type="file" autocomplete="off">
+                    </div>
+                </div>   
+        </div>
+
+        <div class="bg-primary py-2 mb-4">
+            <h4 class="mb-3 text-light px-5">Адрес</h4>
+            
+
+                <div class="row g-3 px-5">
+                    <div class="form-floating col-md-2">
+                        <input asp-for="Country" type="text" class="form-control bg-primary text-light" id="floatingInput" placeholder="Россия" autocomplete="off">
+                        <label class="text-light" for="floatingInput">Страна</label>
+                    </div>
+                    <div class="form-floating col-md-2">
+                        <input asp-for="City" type="text" class="form-control bg-primary text-light" id="floatingInput" placeholder="Ярославль" autocomplete="off">
+                        <label class="text-light" for="floatingInput">Город</label>
+                    </div>
+                    <div class="form-floating col-md-2">
+                        <input asp-for="Street" type="text" class="form-control bg-primary text-light" id="floatingInput" placeholder="Калинина" autocomplete="off">
+                        <label class="text-light" for="floatingInput">Улица</label>
+                    </div>
+                    <div class="form-floating col-md-2">
+                        <input asp-for="HouseNum" type="text" class="form-control bg-primary text-light" id="floatingInput" placeholder="1" autocomplete="off">
+                        <label class="text-light" for="floatingInput">Дом</label>
+                    </div>
+                    <div class="form-floating col-md-2">
+                        <input asp-for="RoomNum" type="text" class="form-control bg-primary text-light" id="floatingInput" placeholder="1" autocomplete="off">
+                        <label class="text-light" for="floatingInput">Квартира</label>
+                    </div>
+                </div>
+        </div>
+
+        <div class="bg-primary py-2 mb-4">
+            <h4 class="mb-3 text-light px-5">Паспортные данные</h4>
+            
+
+                <div class="row g-3 px-5">
+                    <div class="form-floating col-md-2">
+                        <input asp-for="NumAndSeriesPassport" type="text" class="form-control bg-primary text-light" id="floatingInput" placeholder="1111 111111" autocomplete="off">
+                        <label class="text-light" for="floatingInput">Серия номер</label>
+                        <span asp-validation-for="NumAndSeriesPassport" class="text-danger"></span>
+                    </div>
+                    <div class="form-floating col-md-2">
+                        <input asp-for="DateOfIssuePassport" type="date" class="form-control bg-primary text-light" id="floatingInput" placeholder="" autocomplete="off">
+                        <label class="text-light" for="floatingInput">Дата выдачи</label>
+                    </div>
+                    <div class="form-floating col-md-6">
+                        <input asp-for="IssuedByWhomPassport" type="text" class="form-control bg-primary text-light" id="floatingInput" placeholder="умвд россии по области" autocomplete="off">
+                        <label class="text-light" for="floatingInput">Кем выдано</label>
+                    </div>
+
+                </div>
+                <hr class="my-4">
+                <div class="px-5">
+                    <button class="w-25 btn btn-primary btn-lg" type="submit">Сохранить</button>
+                </div>
+        </div>
+    </div>
+</div>
+</form>

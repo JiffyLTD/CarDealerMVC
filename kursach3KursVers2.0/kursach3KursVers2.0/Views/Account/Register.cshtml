@@ -1,0 +1,38 @@
+﻿@model kursach3KursVers2._0.ViewModels.RegisterViewModel
+@{
+    ViewData["Title"] = "Регистрация";
+}
+<div class="container bg-info px-4 py-5" id="icon-grid">
+    <div class="row align-items-center">
+        <div class="col-lg-7 text-center text-lg-start">
+            <h1 class="display-4 fw-bold lh-1 mb-3 link-light">Регистрация</h1>
+            <p class="col-lg-10 fs-4 link-light">При первичной регистрации вы заполняете минимум информации. Для заключения сделки вам придется дополнить все данные в своем профиле.</p>
+        </div>
+        <div class="col-md-10 mx-auto col-lg-5">
+            <form method="post" class="p-4 p-md-5  rounded-3 bg-primary">
+                <div class="form-floating mb-3">
+                    <input asp-for="Email" type="email" class="form-control bg-primary text-light" id="floatingInput" placeholder="name@example.com">
+                    <label class="text-light" for="floatingInput">Email</label>
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input asp-for="UserName" class="form-control bg-primary text-light" id="floatingInput" placeholder="Имя пользователя">
+                    <label class="text-light" for="floatingInput">Логин</label>
+                    <span asp-validation-for="UserName" class="text-danger"></span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input asp-for="Password" type="password" class="form-control bg-primary text-light" id="floatingPassword" placeholder="Password">
+                    <label class="text-light" for="floatingPassword">Пароль</label>
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input asp-for="ConfirmPassword" type="password" class="form-control bg-primary text-light" id="floatingPassword" placeholder="Password">
+                    <label class="text-light" for="floatingPassword">Подтвердите пароль</label>
+                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                </div>
+                <button class="w-100 btn btn-lg btn-primary" type="submit">Регистрация</button>
+                <span class="text-danger">@Html.ValidationMessage("RegisterError")</span>
+            </form>
+        </div>
+    </div>
+</div>

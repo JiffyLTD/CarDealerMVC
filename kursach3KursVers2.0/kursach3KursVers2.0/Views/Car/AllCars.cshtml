@@ -1,0 +1,83 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using kursach3KursVers2._0.Models.Users
+@{
+    ViewData["Title"] = "Автомобили";
+}
+@inject SignInManager<User> SignInManager
+@model kursach3KursVers2._0.ViewModels.CarListViewModel
+
+<div class="container bg-info px-4 py-2" id="icon-grid ">
+    <h2 class="pb-2 border-bottom link-light">Автомобили</h2>
+    @if (SignInManager.IsSignedIn(User))
+    {
+        @if (Model.UserRole != "Клиент")
+        {
+            <a href="/Car/AddCar" class="float-right"><button class="w-25 btn btn-success btn-lg mb-2" type="button">Добавить автомобиль</button></a>
+        }
+    }
+    @if(Model.AllCars.Count() > 0){
+        @foreach (var car in Model.AllCars)
+        {
+            <div class="row align-items-center bg-primary mb-5">
+                <div class="col-lg-4 text-center text-lg-start bg-primary mt-3">
+                     <form class="p-1 p-md-1  rounded-3 ">
+                         <div class="form-floating mb-3">
+                              <input type="text" class="form-control bg-primary text-light" id="floatingInput"
+                              value="@Model.CarBrand.FirstOrDefault(x => x.CarBrandId == car.CarId).CarBrandName" readonly>
+                              <label class="text-light" for="floatingInput">Марка</label>
+                         </div>
+                         <div class="form-floating mb-3">
+                               <input type="text" class="form-control bg-primary text-light" id="floatingInput"
+                               value="@Model.CarModel.FirstOrDefault(x => x.CarBrandId == car.CarId).CarName" readonly>
+                              <label class="text-light" for="floatingInput">Модель</label>
+                         </div>
+                         <div class="form-floating mb-3">
+                              <input type="text" class="form-control bg-primary text-light" id="floatingInput" 
+                              value="@Model.CarSpec.FirstOrDefault(x => x.CarSpecificationId == car.CarSpecificationId).CarMileage" readonly>
+                             <label class="text-light" for="floatingInput">Пробег в км</label>
+                         </div>
+                         <div class="form-floating mb-3">
+                              <input type="text" class="form-control bg-primary text-light" id="floatingInput"
+                           value="@Model.CarSpec.FirstOrDefault(x => x.CarSpecificationId == car.CarSpecificationId).CarColor" readonly>
+                               <label class="text-light" for="floatingInput">Цвет</label>
+                          </div>
+                         <div class="form-floating mb-3">
+                             <a asp-action="ThisCar" asp-route-id="@car.CarId"><button class="w-100 btn btn-primary btn-lg" type="button">Полная информация</button></a>
+                         </div>
+                     </form>
+                 </div>
+                 <div class="col-lg-8 text-center text-lg-start bg-primary">
+                      <form class="p-4 p-md-1  rounded-3 text-center">
+                         <div class="">
+                               <img src="~/Images/@Model.CarDescription.FirstOrDefault(x => x.CarDescriptionId == car.CarDescriptionId).CarPhotoPath" alt="mdo" width="600" height="300" class="rounded">
+                               <div class="px-5 mt-2 ">
+                                @if (SignInManager.IsSignedIn(User))
+                                {
+                                    @if (Model.UserRole == "Администратор" ||
+                                   Model.UserRole == ("Сотрудник " + @Model.CarBrand.FirstOrDefault(x => x.CarBrandId == car.CarId).CarBrandName))
+                                     {
+                                        <a asp-controller="Contract" asp-action="NewContract" asp-route-id="@car.CarId"><button class="w-25 btn btn-primary btn-lg" type="button">Договор</button></a>
+                                        <a asp-action="EditCar" asp-route-id="@car.CarId"><button class="w-25 btn btn-warning btn-lg" type="button">Редактировать</button></a>
+                                        <a asp-action="DeleteCar" asp-route-id="@car.CarId"><button class="w-25 btn btn-danger btn-lg" type="button">Удалить</button></a>
+                                     }
+                                }
+                              </div>
+                          </div>
+                     </form>
+                 </div>
+             </div>
+         }
+    }
+    else
+    {
+        <div class="row align-items-center bg-primary mb-5">
+            <div class="col-lg-12 text-center bg-primary mt-3 text-light">
+                <h3>Кажется все автомобили раскупили...</h3>
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-emoji-frown mb-5" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                    <path d="M4.285 12.433a.5.5 0 0 0 .683-.183A3.498 3.498 0 0 1 8 10.5c1.295 0 2.426.703 3.032 1.75a.5.5 0 0 0 .866-.5A4.498 4.498 0 0 0 8 9.5a4.5 4.5 0 0 0-3.898 2.25.5.5 0 0 0 .183.683zM7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zm4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5z" />
+                </svg>
+            </div>
+        </div>
+    }
+</div>

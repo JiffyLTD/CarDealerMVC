@@ -1,0 +1,111 @@
+﻿@model kursach3KursVers2._0.ViewModels.ProfileViewModel
+@{
+    ViewData["Title"] = "Профиль";
+}
+        <div class="container bg-info px-4 py-2" id="icon-grid ">
+            <h2 class="pb-2 border-bottom link-light">Личный кабинет</h2>
+        <div class="row align-items-center bg-primary">
+            <h4 class=" border-bottom link-light text-center mt-4 py-2">Личные данные</h4>
+            <div class="col-lg-3 text-center text-lg-start bg-primary">
+                <form class="p-1 p-md-1  rounded-3 ">
+                    <div class="form-floating mb-3">  
+                    <input type="text" class="form-control bg-primary text-light" id="floatingInput" value="@Model.LastName" readonly>
+                        <label class="text-light" for="floatingInput">Фамилия</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control bg-primary text-light" id="floatingInput" value="@Model.FirstName" readonly>
+                        <label class="text-light" for="floatingInput">Имя</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control bg-primary text-light" id="floatingInput" value="@Model.Patronymic" readonly>
+                        <label class="text-light" for="floatingInput">Отчество</label>
+                    </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control bg-primary text-light" id="floatingInput" value="@Model.UserName" readonly>
+                    <label class="text-light" for="floatingInput">Логин</label>
+                </div>
+                <div class="form-floating mb-3">
+                        <input type="text" class="form-control bg-primary text-light" id="floatingInput" value="@Model.Email" readonly>
+                        <label class="text-light" for="floatingInput">Email</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                    <input type="text" class="form-control bg-primary text-light" id="floatingInput" value="@Model.PhoneNumber" readonly>
+                        <label class="text-light" for="floatingInput">Телефон</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                    <input type="text" class="form-control bg-primary text-light" id="floatingInput" value="@Model.UserRole" readonly>
+                        <label class="text-light" for="floatingInput">Роль</label>
+                    </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control bg-primary text-light" id="floatingInput" value="@Model.RegisterDate" readonly>
+                    <label class="text-light" for="floatingInput">Дата регистрации</label>
+                </div>
+                </form>
+            </div>
+            <div class="col-lg-9 text-center text-lg-start bg-primary">
+                <h4 class="link-light text-center ">Фото профиля</h4>
+                <form class="p-4 p-md-1  rounded-3 text-center">
+                    <div class="">
+                    <img src="~/Images/@Model.ProfilePhotoPath" alt="mdo" width="400" height="400" class="rounded-circle">
+                        <div class="px-5 mt-2 ">
+                               <a href="/Profile/UserEdit"><button class="w-50 btn btn-primary btn-lg " type="button">Редактировать профиль</button></a
+                            <hr class="my-2">
+                              @if(@Model.UserRole == "Администратор")
+                              {
+                                <a href="/UsersList/UsersList"><button class="w-50 btn btn-warning btn-lg mt-2" type="button">Просмотреть профили пользователей</button></a>
+                              }
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="bg-primary ">
+                <h4 class=" border-bottom link-light text-center mt-4 py-2">Адрес</h4>
+                <form class="needs-validation text-center" novalidate="">
+                    <div class="row g-3 px-5 text-center">
+                        <div class="form-floating col-md-2 text-center">
+                        <input type="text" class="form-control bg-primary text-light" id="floatingInput" value="@Model.Country" readonly>
+                            <label class="text-light" for="floatingInput">Страна</label>
+                        </div>
+                        <div class="form-floating col-md-2">
+                        <input type="text" class="form-control bg-primary text-light" id="floatingInput" value="@Model.City" readonly>
+                            <label class="text-light" for="floatingInput">Город</label>
+                        </div>
+                        <div class="form-floating col-md-2">
+                        <input type="text" class="form-control bg-primary text-light" id="floatingInput" value="@Model.Street" readonly>
+                            <label class="text-light" for="floatingInput">Улица</label>
+                        </div>
+                        <div class="form-floating col-md-2">
+                        <input type="text" class="form-control bg-primary text-light" id="floatingInput" value="@Model.HouseNum" readonly>
+                            <label class="text-light" for="floatingInput">Дом</label>
+                        </div>
+                        <div class="form-floating col-md-2">
+                            <input type="text" class="form-control bg-primary text-light" id="floatingInput" value="@Model.RoomNum" readonly>
+                            <label class="text-light" for="floatingInput">Квартира</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="bg-primary py-2 mb-4">
+                <h4 class=" border-bottom link-light text-center mt-4 py-2">Паспортные данные</h4>
+                <form class="needs-validation " novalidate="">
+
+                    <div class="row g-3 px-5">
+                        <div class="form-floating col-md-2">
+                        <input type="text" class="form-control bg-primary text-light" id="floatingInput" value="@Model.NumAndSeriesPassport" readonly>
+                            <label class="text-light" for="floatingInput">Серия номер</label>
+                        </div>
+                        <div class="form-floating col-md-2">
+                        <input type="text" class="form-control bg-primary text-light" id="floatingInput" value="@Model.DateOfIssuePassport" readonly>
+                            <label class="text-light" for="floatingInput">Дата выдачи</label>
+                        </div>
+                        <div class="form-floating col-md-6">
+                        <input type="text" class="form-control bg-primary text-light" id="floatingInput" value="@Model.IssuedByWhomPassport" readonly>
+                            <label class="text-light" for="floatingInput">Кем выдано</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>

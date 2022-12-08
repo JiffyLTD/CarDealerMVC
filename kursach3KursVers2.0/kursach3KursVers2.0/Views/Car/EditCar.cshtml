@@ -1,0 +1,131 @@
+﻿@model kursach3KursVers2._0.ViewModels.CarAddViewModel
+@{
+    ViewData["Title"] = "Редактирование автомобиля";
+}
+<form class="needs-validation " asp-controller="Car" asp-action="EditCar" method="post">
+    <div class="container bg-info px-4 py-5 mb-5" id="icon-grid">
+        <h2 class="pb-2 border-bottom link-light">Редактировать автомобиль</h2>
+        <div class="">
+            <div class="bg-primary py-2 mb-4">
+                <h4 class="mb-3 text-light px-5">Данные авто</h4>
+                <div class="row g-3 px-5">
+                    <div class="form-floating col-md-2">
+                        <input asp-for="Brand" type="text" class="form-control bg-primary text-light" id="floatingInput" readonly>
+                        <label class="text-light" for="floatingInput">Марка</label>
+                        <span asp-validation-for="Brand" class="text-danger"></span>
+                    </div>
+                    <div class="form-floating col-md-2">
+                        <input asp-for="Model" type="text" class="form-control bg-primary text-light" id="floatingInput">
+                        <label class="text-light" for="floatingInput">Модель</label>
+                        <span asp-validation-for="Model" class="text-danger"></span>
+                    </div>
+
+                    <h2 class="pb-2 border-bottom link-light">Кузов</h2>
+                    <div class="form-floating col-md-2">
+                        <select asp-for="Body" class="form-select bg-primary text-light" aria-label="Default select example">
+                            <option selected>Выбрать...</option>
+                            <option value="Седан">Седан</option>
+                            <option value="Хэтчбэк">Хэтчбэк</option>
+                            <option value="Внедорожник">Внедорожник</option>
+                            <option value="Купе">Купе</option>
+                        </select>
+                        <label class="text-light" for="floatingInput">Наименование кузова</label>
+                        <span asp-validation-for="Body" class="text-danger"></span>
+                    </div>
+
+                    <h2 class="pb-2 border-bottom link-light">Двигатель</h2>
+                    <div class="form-floating col-md-2">
+                        <select asp-for="Volume" class="form-select bg-primary text-light" aria-label="Default select example">
+                            <option selected>Выбрать...</option>
+                            @{
+                                double engineVolume = 0.8;
+                                @while (engineVolume < 5.4)
+                                {
+                                    <option value="@engineVolume">@Math.Round(engineVolume,2)</option>
+                                    engineVolume += 0.1;
+                                }
+                            }
+                        </select>
+                        <label class="text-light" for="floatingInput">Объем</label>
+                        <span asp-validation-for="Volume" class="text-danger"></span>
+                    </div>
+                    <div class="form-floating col-md-2">
+                        <input asp-for="Power" type="text" class="form-control bg-primary text-light" id="floatingInput">
+                        <label class="text-light" for="floatingInput">Мощность в л.с.</label>
+                        <span asp-validation-for="Power" class="text-danger"></span>
+                    </div>
+
+                    <h2 class="pb-2 border-bottom link-light">Коробка передач</h2>
+                    <div class="form-floating col-md-2">
+                        <select asp-for="Transmission" class="form-select bg-primary text-light" aria-label="Default select example">
+                            <option selected>Выбрать...</option>
+                            <option value="Механическая">Механическая</option>
+                            <option value="Автоматическая">Автоматическая</option>
+                            <option value="Робот">Робот</option>
+                            <option value="Вариатор">Вариатор</option>
+                        </select>
+                        <label class="text-light" for="floatingInput">Тип кпп</label>
+                        <span asp-validation-for="Transmission" class="text-danger"></span>
+                    </div>
+
+                    <h2 class="pb-2 border-bottom link-light">Технические характеристики</h2>
+                    <div class="form-floating col-md-2">
+                        <input asp-for="CarMileage" type="text" class="form-control bg-primary text-light" id="floatingInput">
+                        <label class="text-light" for="floatingInput">Пробег в км</label>
+                        <span asp-validation-for="CarMileage" class="text-danger"></span>
+                    </div>
+                    <div class="form-floating col-md-2">
+                        <input asp-for="Color" type="text" class="form-control bg-primary text-light" id="floatingInput">
+                        <label class="text-light" for="floatingInput">Цвет</label>
+                        <span asp-validation-for="Color" class="text-danger"></span>
+                    </div>
+
+                    <h2 class="pb-2 border-bottom link-light">Юридические характеристики</h2>
+                    <div class="form-floating col-md-2">
+                        <input asp-for="NumberOfOwners" type="text" class="form-control bg-primary text-light" id="floatingInput">
+                        <label class="text-light" for="floatingInput">Количество владельцев</label>
+                        <span asp-validation-for="NumberOfOwners" class="text-danger"></span>
+                    </div>
+                    <div class="form-floating col-md-2">
+                        <select asp-for="Year" class="form-select bg-primary text-light" aria-label="Default select example">
+                            <option selected>Выбрать...</option>
+                            @{
+                                int year = 1970;
+                                @while (year <= 2022)
+                                {
+                                    <option value="@year">@year</option>
+                                    year++;
+                                }
+                            }
+                        </select>
+                        <label class="text-light" for="floatingInput">Год выпуска</label>
+                        <span asp-validation-for="Year" class="text-danger"></span>
+                    </div>
+                    <div class="form-floating col-md-2">
+                        <input asp-for="Price" type="text" class="form-control bg-primary text-light" id="floatingInput">
+                        <label class="text-light" for="floatingInput">Цена</label>
+                        <span asp-validation-for="Price" class="text-danger"></span>
+                    </div>
+
+                    <h2 class="pb-2 border-bottom link-light">Описание</h2>
+                    <div class="form-floating col-md-2">
+                        <input asp-for="Desc" type="text" class="form-control bg-primary text-light" id="floatingInput">
+                        <label class="text-light" for="floatingInput">Краткое описание</label>
+                        <span asp-validation-for="Desc" class="text-danger"></span>
+                    </div>
+                    <div class="form-floating col-md-3">
+                        <label for="formFileSm" class="form-label text-light py-0 small">Фото автомобиля</label>
+                        <input asp-for="PhotoPath" class="form-control form-control-sm bg-primary text-light" id="formFileSm" type="file">
+                        <span asp-validation-for="PhotoPath" class="text-danger"></span>
+                    </div>
+                    <hr class="my-4">
+                    <div class="px-5">
+                        <button class="w-25 btn btn-primary btn-lg" type="submit">Сохранить</button>
+                    </div>
+                    <input asp-for="CarId" type="hidden"/>
+                    <span class="text-danger px-5">@Html.ValidationMessage("AddCarError")</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

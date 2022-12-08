@@ -1,0 +1,53 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using kursach3KursVers2._0.Models.Users
+@model kursach3KursVers2._0.ViewModels.UsersListViewModel
+@inject SignInManager<User> SignInManager
+@{
+    ViewData["Title"] = "Зарегестрированные пользователи";
+}
+    <div class="container bg-info px-4 py-5 mb-5" id="icon-grid">
+        <h2 class="pb-2 border-bottom link-light">Зарегестрированные пользователи</h2>
+        <div class="">
+            <div class="bg-primary py-2 mb-4">
+                <h4 class="mb-3 text-light px-5">Список пользователей</h4>
+                @foreach(var user in Model.users)
+                {
+                <div class="row px-5">
+                    <div class="form-floating col-md-2">
+                        <input type="text" class="form-control bg-primary text-light" id="floatingInput" value="@user.UserName" readonly>
+                        <label class="text-light" for="floatingInput">Логин</label>
+                    </div>
+                    <div class="form-floating col-md-2">
+                        <input type="text" class="form-control bg-primary text-light" id="floatingInput" value="@user.LastName" readonly>
+                        <label class="text-light" for="floatingInput">Фамилия</label>
+                    </div>
+                    <div class="form-floating col-md-2">
+                        <input type="text" class="form-control bg-primary text-light" id="floatingInput" value="@user.FirstName" readonly>
+                        <label class="text-light" for="floatingInput">Имя</label>
+                    </div>
+                    <div class="form-floating col-md-2">
+                        <input type="text" class="form-control bg-primary text-light" id="floatingInput" value="@user.Patronymic" readonly>
+                        <label class="text-light" for="floatingInput">Отчество</label>
+                    </div>
+                    <div class="form-floating col-md-2">
+                        <input type="text" class="form-control bg-primary text-light" id="floatingInput"
+                           value="@foreach(var role in Model.userRoles){@if(role.RoleId == user.RoleId){@role.RoleName}}" readonly>
+                        <label class="text-light" for="floatingInput">Роль</label>
+                    </div>
+                    <hr class="my-2">
+                    @if (@User.Identity.Name != user.UserName)
+                    {
+                        <div class="form-floating col-md-2 mb-3">
+                            <a class="btn btn-sm btn-warning w-75" asp-controller="UsersList" asp-action="EditUser" asp-route-id="@user.Id">Редактировать</a>
+                        </div>
+                        <div class="form-floating col-md-2 mb-3">
+                            <a class="btn btn-sm btn-danger w-50" asp-controller="UsersList" asp-action="DeleteUser" asp-route-id="@user.Id">Удалить</a>
+                        </div>
+                    }
+                </div>
+                <span class="text-danger px-5">@Html.ValidationMessage("DeleteUserError")</span>
+                <hr class="my-2 border-bottom mb-2">
+                }
+            </div>
+        </div>
+    </div>

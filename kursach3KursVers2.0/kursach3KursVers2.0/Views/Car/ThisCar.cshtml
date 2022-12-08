@@ -1,0 +1,86 @@
+﻿@model kursach3KursVers2._0.ViewModels.CarAddViewModel
+@{
+    ViewData["Title"] = Model.Brand + Model.Model;
+}
+<div class="container bg-info px-4 py-2" id="icon-grid ">
+
+    <h2 class="pb-2 border-bottom link-light">@Model.Brand  @Model.Model</h2>
+
+    <div class="row bg-primary">
+        <div class="col-lg-6 text-center text-lg-start bg-primary mt-3">
+            <h3 class="pb-2 border-bottom link-light">Описание</h3>
+            <form class="p-1 p-md-1  rounded-3 ">
+                <p class="text-light">@Model.Desc</p>
+            </form>
+        </div>
+        <div class="col-lg-6 text-center text-lg-start bg-primary">
+            <form class="p-4 p-md-1  rounded-3 text-center">
+                <div class="">
+                    <img src="~/Images/@Model.PhotoPath" alt="mdo" width="600" height="300" class="rounded">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row  bg-primary mb-3">
+        <div class="col-lg-6 text-center text-lg-start bg-primary">
+            <h3 class="pb-2 border-bottom link-light">Юридические характеристики</h3>
+            <form class="p-4 p-md-1  rounded-3 text-center">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control bg-primary text-light" id="floatingInput" value="@Model.NumberOfOwners" readonly>
+                    <label class="text-light" for="floatingInput">Количество владельцев</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control bg-primary text-light" id="floatingInput" value="@Model.Year" readonly>
+                    <label class="text-light" for="floatingInput">Год выпуска</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control bg-primary text-light" id="floatingInput" value="@Model.Price.ToString("c")" readonly>
+                    <label class="text-light" for="floatingInput">Цена</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control bg-primary text-light" id="floatingInput" value="@Model.SaleDate" readonly>
+                    <label class="text-light" for="floatingInput">Дата объявления о продаже</label>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-6 tcol-md-10 mx-auto bg-primary">
+            <h3 class="pb-2 border-bottom link-light">Технические характеристики</h3>
+            <form class="p-1 p-md-3  rounded-3 ">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control bg-primary text-light" id="floatingInput" value="@Model.Brand" readonly>
+                    <label class="text-light" for="floatingInput">Марка</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control bg-primary text-light" id="floatingInput" value="@Model.Model" readonly>
+                    <label class="text-light" for="floatingInput">Модель</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control bg-primary text-light" id="floatingInput" value="@Model.CarMileage" readonly>
+                    <label class="text-light" for="floatingInput">Пробег в км</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control bg-primary text-light" id="floatingInput" value="@Model.Color" readonly>
+                    <label class="text-light" for="floatingInput">Цвет</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control bg-primary text-light" id="floatingInput" value="@Model.Body" readonly>
+                    <label class="text-light" for="floatingInput">Кузов</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control bg-primary text-light" id="floatingInput" value="@Math.Round(Model.Volume,2)" readonly>
+                    <label class="text-light" for="floatingInput">Объем двигателя</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control bg-primary text-light" id="floatingInput" value="@Model.Power" readonly>
+                    <label class="text-light" for="floatingInput">Мощность двигателя</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control bg-primary text-light" id="floatingInput" value="@Model.Transmission" readonly>
+                    <label class="text-light" for="floatingInput">Коробка передач</label>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
