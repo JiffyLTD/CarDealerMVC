@@ -2,16 +2,16 @@
 @{
     ViewData["Title"] = "Заключить контракт";
 }
-<form class="needs-validation " asp-controller="UsersList" asp-action="EditUser" method="post">
+<form class="needs-validation " asp-controller="Contract" asp-action="NewContract" method="post">
     <div class="container bg-info px-4 py-5 mb-5" id="icon-grid">
         <h2 class="pb-2 border-bottom link-light">Заключение договора</h2>
         <div class="">
             <div class="bg-primary py-2 mb-4">
                 <div class="row g-3 px-5">
                     <div class="form-floating col-md-2">
-                        <input asp-for="dealer.DillerName" type="text" class="form-control bg-primary text-light" id="floatingInput" readonly>
+                        <input asp-for="dealer" type="text" class="form-control bg-primary text-light" id="floatingInput" readonly>
                         <label class="text-light" for="floatingInput">Дилер</label>
-                        <span asp-validation-for="dealer.DillerName" class="text-danger"></span>
+                        <span asp-validation-for="dealer" class="text-danger"></span>
                     </div>
                     <div class="form-floating col-md-2">
                         <input asp-for="CarName" type="text" class="form-control bg-primary text-light" id="floatingInput" readonly>
@@ -20,7 +20,7 @@
                     </div>
                     <input asp-for="car.CarId" type="hidden" class="form-control bg-primary text-light" id="floatingInput" readonly>
                     <div class="form-floating col-md-2">
-                        <select  class="form-select bg-primary text-light" aria-label="Default select example">
+                        <select asp-for="UserId"  class="form-select bg-primary text-light" aria-label="Default select example">
                             <option selected>Выбрать...</option>
                             @foreach(var user in Model.users)
                             {
@@ -36,6 +36,8 @@
                     <div class="px-5">
                         <button class="w-25 btn btn-primary btn-lg" type="submit">Заключить договор</button>
                     </div>
+                    <input asp-for="dealer" type="hidden"/>
+                    <input asp-for="car" type="hidden"/>
                 </div>
             </div>
         </div>

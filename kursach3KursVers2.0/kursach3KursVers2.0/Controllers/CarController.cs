@@ -29,6 +29,7 @@ namespace kursach3KursVers2._0.Controllers
         IRepository<UserRole> _roleRepository;
         IRepository<Seller> _sellerRepository;
         IRepository<Diller> _dillerRepository;
+        AppDbContext _context;
 
         public CarController(SignInManager<User> signInManager, UserManager<User> userManager,
             IRepository<Car> carRepository, IRepository<CarBody> carBodyRepository,
@@ -36,7 +37,7 @@ namespace kursach3KursVers2._0.Controllers
             IRepository<CarEngine> carEngineRepository, IRepository<CarLegalCharacteristics> carLCRepository,
             IRepository<CarModel> carModelRepository, IRepository<CarSpecification> carSpecRepository,
             IRepository<CarTransmission> carTransRepository, IRepository<UserRole> roleRepository, IRepository<Seller> sellerRepository,
-            IRepository<Diller> dillerRepository)
+            IRepository<Diller> dillerRepository, AppDbContext context)
         {
             _signInManager = signInManager;
             _userManager = userManager;
@@ -52,6 +53,7 @@ namespace kursach3KursVers2._0.Controllers
             _roleRepository = roleRepository;
             _sellerRepository = sellerRepository;
             _dillerRepository = dillerRepository;
+            _context = context;
         }
 
         public async Task<IActionResult> AllCars()
@@ -72,7 +74,8 @@ namespace kursach3KursVers2._0.Controllers
                     CarLegalCharacteristics = _carLCRepository.GetAll(),
                     CarModel = _carModelRepository.GetAll(),
                     CarSpecification = _carSpecRepository.GetAll(),
-                    CarTransmission = _carTransRepository.GetAll()
+                    CarTransmission = _carTransRepository.GetAll(),
+                    contractOfSales = _context.contractsOfSales.ToList()
                 };
                 return View(allCarsViewModel);
             }
@@ -89,7 +92,8 @@ namespace kursach3KursVers2._0.Controllers
                     CarLegalCharacteristics = _carLCRepository.GetAll(),
                     CarModel = _carModelRepository.GetAll(),
                     CarSpecification = _carSpecRepository.GetAll(),
-                    CarTransmission = _carTransRepository.GetAll()
+                    CarTransmission = _carTransRepository.GetAll(),
+                    contractOfSales = _context.contractsOfSales.ToList()
                 };
                 return View(allCarsViewModel);
             }

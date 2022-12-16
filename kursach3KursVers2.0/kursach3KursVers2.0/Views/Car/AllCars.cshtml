@@ -1,5 +1,6 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @using kursach3KursVers2._0.Models.Users
+@using kursach3KursVers2._0.Models.ContractsOfSale
 @{
     ViewData["Title"] = "Автомобили";
 }
@@ -51,16 +52,46 @@
                          <div class="">
                                <img src="~/Images/@Model.CarDescription.FirstOrDefault(x => x.CarDescriptionId == car.CarDescriptionId).CarPhotoPath" alt="mdo" width="600" height="300" class="rounded">
                                <div class="px-5 mt-2 ">
+
+                             @{
                                 @if (SignInManager.IsSignedIn(User))
                                 {
                                     @if (Model.UserRole == "Администратор" ||
                                    Model.UserRole == ("Сотрудник " + @Model.CarBrand.FirstOrDefault(x => x.CarBrandId == car.CarId).CarBrandName))
                                      {
-                                        <a asp-controller="Contract" asp-action="NewContract" asp-route-id="@car.CarId"><button class="w-25 btn btn-primary btn-lg" type="button">Договор</button></a>
+                                            bool isItInContacrt ()
+                                            {
+                                                int i = 0;
+                                                foreach (var item in Model.contractOfSales)
+                                                {
+                                                    if (item.CarId == car.CarId)
+                                                    {
+                                                        i++;
+                                                        break;
+                                                    }
+                                                }
+                                                if (i > 0) 
+                                                {
+                                                    return true;
+                                                }
+                                                else
+                                                {
+                                                    return false;
+                                                }
+                                            }
+                                            if (isItInContacrt())
+                                            {
+                                                <a asp-controller="Contract" asp-action="DownloadDoc" asp-route-id="@car.CarId"><button class="w-25 btn btn-primary btn-lg" type="button">Скачать</button></a>
+                                            }
+                                            else
+                                            {
+                                                <a asp-controller="Contract" asp-action="NewContract" asp-route-id="@car.CarId"><button class="w-25 btn btn-primary btn-lg" type="button">Договор</button></a>
+                                            }
                                         <a asp-action="EditCar" asp-route-id="@car.CarId"><button class="w-25 btn btn-warning btn-lg" type="button">Редактировать</button></a>
                                         <a asp-action="DeleteCar" asp-route-id="@car.CarId"><button class="w-25 btn btn-danger btn-lg" type="button">Удалить</button></a>
                                      }
                                 }
+                              }
                               </div>
                           </div>
                      </form>

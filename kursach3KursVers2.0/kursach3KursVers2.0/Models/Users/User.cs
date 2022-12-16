@@ -26,7 +26,7 @@ namespace kursach3KursVers2._0.Models.Users
         public int RoleId { get; set; }
         public UserRole UserRole { get; set; }
        [Required]
-       public Buyer Buyer { get; set; }
+       public List<Buyer> Buyer { get; set; }
         [Required]
         public Seller Seller { get; set; }
     }

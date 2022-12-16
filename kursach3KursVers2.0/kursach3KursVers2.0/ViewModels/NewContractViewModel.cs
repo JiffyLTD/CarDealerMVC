@@ -7,8 +7,9 @@ namespace kursach3KursVers2._0.ViewModels
     public class NewContractViewModel
     {
         public List<User> users { get; set; }  
-        public Diller dealer { get; set; }   
+        public string dealer { get; set; }   
         public Car car { get; set; }   
         public string CarName { get; set; }   
+        public string UserId { get; set; }
     }
 }

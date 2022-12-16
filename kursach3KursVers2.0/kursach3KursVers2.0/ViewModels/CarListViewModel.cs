@@ -1,4 +1,5 @@
 ﻿using kursach3KursVers2._0.Models.Cars;
+using kursach3KursVers2._0.Models.ContractsOfSale;
 
 namespace kursach3KursVers2._0.ViewModels
 {
@@ -15,5 +16,7 @@ namespace kursach3KursVers2._0.ViewModels
         public IEnumerable<CarModel>? CarModel { get; set; }
         public IEnumerable<CarSpecification>? CarSpecification { get; set; }
         public IEnumerable<CarTransmission>? CarTransmission { get; set; }
+
+        public List<ContractOfSale> contractOfSales { get; set; }
     }
 }
